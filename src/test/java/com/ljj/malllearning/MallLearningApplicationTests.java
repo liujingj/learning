@@ -1,5 +1,9 @@
 package com.ljj.malllearning;
 
+import com.alibaba.fastjson.JSONObject;
+
+import java.util.Date;
+
 class MallLearningApplicationTests {
 
 
@@ -14,7 +18,20 @@ class MallLearningApplicationTests {
     }
 
     public static void main(String[] args) throws Exception {
-        getDrinks(5, 2);
+        String str = "{\"level\":2,\"start\":\"20201012\",\"end\":\"20221011\"}";
+        JSONObject expireTag = JSONObject.parseObject(str);
+        try {
+            String endDate = expireTag == null ? null : expireTag.getString("end");
+            if (endDate != null) {
+                Date end = org.apache.commons.lang3.time.DateUtils.parseDate(endDate, "yyyyMMdd");
+                System.out.println(end.before(new Date()));
+            }
+        } catch (Exception e) {
+            System.out.println(e);
+        }
+
+
+//        getDrinks(5, 2);
 
 
 //        String str = "[1,2,3]";
