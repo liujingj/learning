@@ -11,9 +11,8 @@ import org.springframework.stereotype.Component;
  */
 @Component
 public class MyApplicationContextAware implements ApplicationContextAware {
-    // TODO: 2020/11/11 第7-1步
     @Override
     public void setApplicationContext(ApplicationContext applicationContext) throws BeansException {
-        System.out.println("MyApplicationContextAware.setApplicationContext");
+        System.out.println("==================实现了 ApplicationContextAware setApplicationContext");
     }
 }

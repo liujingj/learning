@@ -6,25 +6,25 @@ import org.springframework.core.annotation.Order;
 import org.springframework.stereotype.Component;
 
 /**
+ * Bean级别 创建每一个Bean的时候都会执行 共有的
+ * 执行init方法前后
+ *
  * @author ljj
  * @date 2020/11/10
  */
-@Order(value = 2)
 @Component
 public class MyBeanPostProcessor implements BeanPostProcessor {
 
 
     @Override
     public Object postProcessBeforeInitialization(Object bean, String beanName) throws BeansException {
-        // TODO: 2020/11/10 第八步
-        System.out.println("MyBeanPostProcessor.postProcessBeforeInitialization");
+        System.out.println("-------- 第九步 Bean级别(包括spring自身的Bean) 执行init方法之前 BeanPostProcessor.postProcessBeforeInitialization()");
         return bean;
     }
 
     @Override
     public Object postProcessAfterInitialization(Object bean, String beanName) throws BeansException {
-        // TODO: 2020/11/10 第十一步
-        System.out.println("MyBeanPostProcessor.postProcessAfterInitialization");
+        System.out.println("--------第十二步 Bean级别(包括spring自身的Bean) 执行init方法之后 BeanPostProcessor.postProcessAfterInitialization()");
         return bean;
     }
 }

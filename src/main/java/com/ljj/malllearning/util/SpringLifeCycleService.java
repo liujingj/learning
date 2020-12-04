@@ -2,71 +2,64 @@ package com.ljj.malllearning.util;
 
 import org.springframework.beans.BeansException;
 import org.springframework.beans.factory.*;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Lazy;
 import org.springframework.stereotype.Component;
 
 import javax.annotation.PostConstruct;
 import javax.annotation.PreDestroy;
 
 /**
- * 缺点：业务和spring框架耦合度比较高
+ * 每一个Bean自身特殊的
+ * BeanNameAware BeanFactoryAware 属性设置之后  InitializingBean init执行之后
+ *
  * @author ljj
  * @date 2020/11/10
  */
 @Component
+@Lazy
 public class SpringLifeCycleService implements BeanFactoryAware, BeanNameAware, InitializingBean, DisposableBean {
 
-    private String name;
-    private int time;
+    private Apple apple;
 
     public SpringLifeCycleService() {
-        // TODO: 2020/11/10 第二步 
-        System.out.println("构造方法");
+        System.out.println("--------第三步 bean1的构造方法");
     }
 
-    public void setName(String name) {
-        // TODO: 2020/11/10 第五步
-        System.out.println("属性设置name");
-        this.name = name;
-    }
-
-    public void setTime(int time) {
-        System.out.println("属性设置time");
-        this.time = time;
-    }
-
-    @Override
-    public void setBeanFactory(BeanFactory beanFactory) throws BeansException {
-        // TODO: 2020/11/10 第七步
-        System.out.println("setBeanFactory");
+    @Autowired
+    public void setApple(Apple apple) {
+        System.out.println("--------第六步 bean1属性设置apple");
+        this.apple = apple;
     }
 
     @Override
     public void setBeanName(String s) {
-        // TODO: 2020/11/10 第六步
-        System.out.println("setBeanName");
+        System.out.println("-------- 第七步 属性设置之后 bean1 实现的 BeanNameAware.setBeanName()");
     }
 
     @Override
-    public void destroy() throws Exception {
-        // TODO: 2020/11/10 第十二步
-        System.out.println("destroy");
+    public void setBeanFactory(BeanFactory beanFactory) throws BeansException {
+        System.out.println("--------第八步 属性设置之后 bean1 实现的 BeanFactoryAware.setBeanFactory()");
+    }
+
+    @Override
+    public void destroy() {
+        System.out.println("-------- 第十四步 执行destroy方法之后 bean1实现的DisposableBean");
     }
 
     @Override
     public void afterPropertiesSet() throws Exception {
-        // TODO: 2020/11/10 第九步
-        System.out.println("afterPropertiesSet");
+        System.out.println("-------- 第十一步 init执行之后，bean1 实现的 InitializingBean.afterPropertiesSet()");
     }
 
     @PostConstruct
     public void myInit() {
-        // TODO: 2020/11/10 第十步
-        System.out.println("myInit");
+        System.out.println("-------- 第十步 bean1的init方法");
     }
 
     @PreDestroy
     public void myDestroy() {
-        // TODO: 2020/11/10 第十三步
-        System.out.println("myDestroy");
+        System.out.println("-------- 第十三步 bean1的 destroy方法");
     }
+
 }

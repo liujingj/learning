@@ -11,7 +11,7 @@ public class MallLearningApplication {
 
     public static void main(String[] args) {
         SpringApplication.run(MallLearningApplication.class, args);
-        AnnotationConfigApplicationContext context=new AnnotationConfigApplicationContext("com.ljj.malllearning.util");
+//        AnnotationConfigApplicationContext context=new AnnotationConfigApplicationContext("com.ljj.malllearning.util");
 //        context.getBean("springLifeCycleService");
     }
 
