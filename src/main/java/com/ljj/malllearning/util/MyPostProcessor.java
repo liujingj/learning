@@ -13,7 +13,7 @@ import org.springframework.stereotype.Component;
  * @author ljj
  * @date 2020/11/10
  */
-@Component
+//@Component
 public class MyPostProcessor extends InstantiationAwareBeanPostProcessorAdapter {
 
 

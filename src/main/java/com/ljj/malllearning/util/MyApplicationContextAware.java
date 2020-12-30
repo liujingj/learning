@@ -9,7 +9,7 @@ import org.springframework.stereotype.Component;
  * @author ljj
  * @date 2020/11/11
  */
-@Component
+//@Component
 public class MyApplicationContextAware implements ApplicationContextAware {
     @Override
     public void setApplicationContext(ApplicationContext applicationContext) throws BeansException {

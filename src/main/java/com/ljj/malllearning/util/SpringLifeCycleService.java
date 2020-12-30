@@ -3,6 +3,7 @@ package com.ljj.malllearning.util;
 import org.springframework.beans.BeansException;
 import org.springframework.beans.factory.*;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Lazy;
 import org.springframework.stereotype.Component;
 
@@ -16,11 +17,16 @@ import javax.annotation.PreDestroy;
  * @author ljj
  * @date 2020/11/10
  */
-@Component
-@Lazy
+//@Component
 public class SpringLifeCycleService implements BeanFactoryAware, BeanNameAware, InitializingBean, DisposableBean {
 
+    @Autowired
+    private Orange orange;
+
     private Apple apple;
+
+    @Value("${myProp}")
+    private String myPro;
 
     public SpringLifeCycleService() {
         System.out.println("--------第三步 bean1的构造方法");

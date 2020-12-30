@@ -7,5 +7,5 @@ import org.springframework.stereotype.Component;
  * @date 2020/12/4
  */
 @Component
-public class Orange {
+public class Orange{
 }

@@ -1,5 +1,7 @@
 package com.ljj.malllearning;
 
+import com.ljj.malllearning.util.SpringLifeCycleService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration;
@@ -11,8 +13,6 @@ public class MallLearningApplication {
 
     public static void main(String[] args) {
         SpringApplication.run(MallLearningApplication.class, args);
-//        AnnotationConfigApplicationContext context=new AnnotationConfigApplicationContext("com.ljj.malllearning.util");
-//        context.getBean("springLifeCycleService");
     }
 
 }

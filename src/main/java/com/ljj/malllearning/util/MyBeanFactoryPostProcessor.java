@@ -11,7 +11,7 @@ import org.springframework.stereotype.Component;
  * @author ljj
  * @date 2020/11/11
  */
-@Component
+//@Component
 public class MyBeanFactoryPostProcessor implements BeanFactoryPostProcessor {
 
     @Override
