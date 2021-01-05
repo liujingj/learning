@@ -6,12 +6,12 @@ package com.ljj.malllearning.designpattern;
  */
 public class FruitFactoryImpl implements FruitFactoryAbs {
     @Override
-    public Apple getApple() {
+    public Fruit getApple() {
         return new Apple();
     }
 
     @Override
-    public Orange getOrange() {
+    public Fruit getOrange() {
         return new Orange();
     }
 }

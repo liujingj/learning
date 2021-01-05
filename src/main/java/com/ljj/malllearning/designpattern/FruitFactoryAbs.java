@@ -6,7 +6,7 @@ package com.ljj.malllearning.designpattern;
  */
 public interface FruitFactoryAbs {
 
-    Apple getApple();
+    Fruit getApple();
 
-    Orange getOrange();
+    Fruit getOrange();
 }
