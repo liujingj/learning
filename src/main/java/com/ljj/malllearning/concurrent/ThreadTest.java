@@ -13,28 +13,45 @@ public class ThreadTest {
     private static final int count = 10000000;
 
     public static void main(String[] args) throws InterruptedException {
-        Thread thread1 = new Thread(() -> {
-            try {
-                Thread.sleep(1000 * 60 * 60);
-            } catch (InterruptedException e) {
-                System.out.println("thread1被打断");
-            }
-        });
-        Thread thread2 = new Thread(() -> {
-            while (true) {
+        //Thread thread1 = new Thread(() -> {
+        //    while (true) {
+        //        System.out.println("线程进行工作");
+        //    }
+        //});
+        //thread1.start();
+        //Thread.sleep(5);
+        //thread1.suspend();
+        //// TODO: 2021/1/27 将thread1 suspend后，主线程被阻塞了，下面的代码执行不到
+        //System.out.println("------主线程将thread1暂停");
+        //Thread.sleep(5);
+        //System.out.println("------主线程将thread1唤醒");
+        //thread1.resume();
+        //Thread.sleep(5);
+        //thread1.stop();
+        //System.out.println("------主线程将thread1停止");
 
-            }
-        });
-        thread1.start();
-        thread2.start();
-
-        Thread.sleep(1000 * 5);
-
-        thread1.interrupt();
-        thread2.interrupt();
-
-        System.out.println("thread1 线程是否被打断" + thread1.isInterrupted());
-        System.out.println("thread2 线程是否被打断" + thread2.isInterrupted());
+        //Thread thread1 = new Thread(() -> {
+        //    try {
+        //        Thread.sleep(1000 * 60 * 60);
+        //    } catch (InterruptedException e) {
+        //        System.out.println("thread1被打断");
+        //    }
+        //});
+        //Thread thread2 = new Thread(() -> {
+        //    while (true) {
+        //
+        //    }
+        //});
+        //thread1.start();
+        //thread2.start();
+        //
+        //Thread.sleep(1000 * 5);
+        //
+        //thread1.interrupt();
+        //thread2.interrupt();
+        //
+        //System.out.println("thread1 线程是否被打断" + thread1.isInterrupted());
+        //System.out.println("thread2 线程是否被打断" + thread2.isInterrupted());
 
         //Thread.sleep(1000 * 60 * 5);
         //查看java程序包含哪些线程
