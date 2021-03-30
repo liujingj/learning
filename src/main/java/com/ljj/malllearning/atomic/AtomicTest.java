@@ -3,6 +3,7 @@ package com.ljj.malllearning.atomic;
 import lombok.ToString;
 
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.concurrent.atomic.AtomicStampedReference;
 
 /**
  * @author ljj
