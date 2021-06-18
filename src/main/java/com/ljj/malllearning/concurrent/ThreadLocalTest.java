@@ -7,8 +7,13 @@ package com.ljj.malllearning.concurrent;
 public class ThreadLocalTest {
     public static void main(String[] args) {
         ThreadLocal<Long> time = new ThreadLocal<>();
-        time.set(1L);
         time.get();
+        time.set(1L);
         time.remove();
+
+    }
+
+    public <T, R> R test(T param, R result) {
+        return result;
     }
 }

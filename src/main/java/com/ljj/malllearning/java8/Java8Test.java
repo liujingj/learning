@@ -1,7 +1,6 @@
 package com.ljj.malllearning.java8;
 
 import java.io.DataOutputStream;
-import java.io.File;
 import java.io.FileOutputStream;
 
 /**
@@ -48,6 +47,5 @@ public class Java8Test {
 
     public void run() throws Exception {
         Class.forName("com.ljj.malllearning.java8.TestJavac").getMethod("test").invoke(null);
-
     }
 }
