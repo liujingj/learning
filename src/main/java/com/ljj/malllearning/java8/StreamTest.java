@@ -11,6 +11,8 @@ public class StreamTest {
 
     public static void main(String[] args) {
         List<String> list= Arrays.asList("1","1");
+        list.stream().anyMatch(v->v.equals("1"));
+
     }
 
 }
