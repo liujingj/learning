@@ -9,9 +9,9 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>com.ljj</groupId>
-    <artifactId>mall-learning</artifactId>
+    <artifactId>my-project</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>mall-learning</name>
+    <name>my-project</name>
     <description>Demo project for Spring Boot</description>
 
     <properties>
