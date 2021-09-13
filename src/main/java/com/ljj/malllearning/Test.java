@@ -1,9 +1,12 @@
 package com.ljj.malllearning;
 
+import org.springframework.stereotype.Component;
+
 /**
  * @author ljj
  * @date 2021/2/24
  */
+@Component
 public class Test {
     public static class Father {
         int age = 40;
