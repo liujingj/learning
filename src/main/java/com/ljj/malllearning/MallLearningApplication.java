@@ -53,14 +53,14 @@ import java.util.stream.Stream;
 //@PropertySources({@PropertySource(""),@PropertySource("")})
 //@SpringBootApplication(exclude = {DataSourceAutoConfiguration.class},scanBasePackages ="com.ljj.malllearning" )
 //@StringRepository
-@Configuration
-@ComponentScan(basePackageClasses = TransactionalServiceBean.class)
-@EnableTransactionManagement
+//@Configuration
+//@ComponentScan(basePackageClasses = TransactionalServiceBean.class)
+//@EnableTransactionManagement
 public class MallLearningApplication {
     //    @SuppressWarnings("SpringJavaAutowiredFieldsWarningInspection")
 //    @Autowired
 //    private List<Test> list;
-    public static void main(String[] args) throws Exception {
+    public void main(String[] args) throws Exception {
 
         AnnotatedElement annotatedElement=TransactionalServiceBean.class;
         //获取@Service注解的属性
