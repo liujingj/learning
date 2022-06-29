@@ -2,7 +2,7 @@ package com.ljj.malllearning.springboot.annotation;
 
 import org.springframework.core.annotation.AliasFor;
 import org.springframework.stereotype.Service;
-import org.springframework.transaction.annotation.Transactional;
+//import org.springframework.transaction.annotation.Transactional;
 
 import java.lang.annotation.*;
 
@@ -10,7 +10,7 @@ import java.lang.annotation.*;
 @Retention(RetentionPolicy.RUNTIME)
 @Documented
 @Service
-@Transactional
+//@Transactional
 public @interface TransactionalService {
 
     @AliasFor("value")
@@ -19,8 +19,8 @@ public @interface TransactionalService {
     @AliasFor("name")
     String value() default "transactionalService";
 
-    @AliasFor(annotation = Transactional.class, attribute = "transactionManager")
-    String manager() default "txManager";
+    //@AliasFor(annotation = Transactional.class, attribute = "transactionManager")
+    //String manager() default "txManager";
 }
 
 

@@ -25,13 +25,13 @@ import org.springframework.core.type.classreading.CachingMetadataReaderFactory;
 import org.springframework.core.type.classreading.MetadataReader;
 import org.springframework.stereotype.Repository;
 import org.springframework.stereotype.Service;
-import org.springframework.transaction.PlatformTransactionManager;
-import org.springframework.transaction.TransactionDefinition;
-import org.springframework.transaction.TransactionException;
-import org.springframework.transaction.TransactionStatus;
-import org.springframework.transaction.annotation.EnableTransactionManagement;
-import org.springframework.transaction.annotation.Transactional;
-import org.springframework.transaction.support.SimpleTransactionStatus;
+//import org.springframework.transaction.PlatformTransactionManager;
+//import org.springframework.transaction.TransactionDefinition;
+//import org.springframework.transaction.TransactionException;
+//import org.springframework.transaction.TransactionStatus;
+//import org.springframework.transaction.annotation.EnableTransactionManagement;
+//import org.springframework.transaction.annotation.Transactional;
+//import org.springframework.transaction.support.SimpleTransactionStatus;
 import org.springframework.util.ClassUtils;
 import org.springframework.util.CollectionUtils;
 import org.springframework.util.ObjectUtils;
@@ -66,9 +66,9 @@ public class MallLearningApplication {
         //获取@Service注解的属性
         AnnotationAttributes serviceAttributes= AnnotatedElementUtils.getMergedAnnotationAttributes(annotatedElement, Service.class);
         //获取@Transactional注解的属性
-        AnnotationAttributes transactionalAttributes= AnnotatedElementUtils.getMergedAnnotationAttributes(annotatedElement, Transactional.class);
-        print(serviceAttributes);
-        print(transactionalAttributes);
+        //AnnotationAttributes transactionalAttributes= AnnotatedElementUtils.getMergedAnnotationAttributes(annotatedElement, Transactional.class);
+        //print(serviceAttributes);
+        //print(transactionalAttributes);
 //        ConfigurableApplicationContext context = new AnnotationConfigApplicationContext(MallLearningApplication.class);
 //        Map<String,TransactionalServiceBean> map= context.getBeansOfType(TransactionalServiceBean.class);
 //        map.forEach((name,bean)->{
@@ -162,35 +162,35 @@ public class MallLearningApplication {
 //    public void onWebServerReady(WebServerInitializedEvent event){
 //        System.out.println("当前server实现类为："+event.getWebServer().getClass().getName());
 //    }
-    @Bean("txManager")
-    public PlatformTransactionManager txManager(){
-        return new PlatformTransactionManager() {
-            @Override
-            public TransactionStatus getTransaction(TransactionDefinition definition) throws TransactionException {
-                return new SimpleTransactionStatus();
-            }
-            @Override
-            public void commit(TransactionStatus status) throws TransactionException {
-                System.out.println("txManager:事务提交");
-            }
-            @Override
-            public void rollback(TransactionStatus status) throws TransactionException {}
-        };
-    }
-
-    @Bean("txManager2")
-    public PlatformTransactionManager txManager2(){
-        return new PlatformTransactionManager() {
-            @Override
-            public TransactionStatus getTransaction(TransactionDefinition definition) throws TransactionException {
-                return new SimpleTransactionStatus();
-            }
-            @Override
-            public void commit(TransactionStatus status) throws TransactionException {
-                System.out.println("txManager2:事务提交");
-            }
-            @Override
-            public void rollback(TransactionStatus status) throws TransactionException {}
-        };
-    }
+//    @Bean("txManager")
+//    public PlatformTransactionManager txManager(){
+//        return new PlatformTransactionManager() {
+//            @Override
+//            public TransactionStatus getTransaction(TransactionDefinition definition) throws TransactionException {
+//                return new SimpleTransactionStatus();
+//            }
+//            @Override
+//            public void commit(TransactionStatus status) throws TransactionException {
+//                System.out.println("txManager:事务提交");
+//            }
+//            @Override
+//            public void rollback(TransactionStatus status) throws TransactionException {}
+//        };
+//    }
+//
+//    @Bean("txManager2")
+//    public PlatformTransactionManager txManager2(){
+//        return new PlatformTransactionManager() {
+//            @Override
+//            public TransactionStatus getTransaction(TransactionDefinition definition) throws TransactionException {
+//                return new SimpleTransactionStatus();
+//            }
+//            @Override
+//            public void commit(TransactionStatus status) throws TransactionException {
+//                System.out.println("txManager2:事务提交");
+//            }
+//            @Override
+//            public void rollback(TransactionStatus status) throws TransactionException {}
+//        };
+//    }
 }
